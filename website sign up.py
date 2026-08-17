@@ -5,8 +5,14 @@ def sign_up():
   username = input("Enter your username: ")
   password = input("Enter your password: ")
   if username.isalnum() and len(password) >= 8:
-      print("Login successful!")
+      if any(i.isupper() for i in password) and any(i.islower() for i in password) and any(i.isdigit() for i in password):
+       print("Login successful!")
+      else:
+       print("Invalid password.")
   else:
      print("Invalid username or password.")
     
 sign_up()
+
+
+
